@@ -1,17 +1,26 @@
+const { BIGINT } = require("sequelize")
+
 const storeModel = (sequelize, DataTypes) => {
 
-    const store = sequelize.define('store', {
-        storeName: {
+    const store = sequelize.define('program', {
+
+        sn: {
+            type: BIGINT
+        },
+        programDetails: {
             type: DataTypes.STRING
         },
-        storeOwner: {
-            type: DataTypes.STRING
+        inTime: {
+            type: DataTypes.TIME
         },
-        storeAddress: {
-            type: DataTypes.STRING
+        outTime: {
+            type: DataTypes.TIME
         },
-        storePhone: {
-            type: DataTypes.BIGINT
+        duration: {
+            type: DataTypes.TIME
+        },
+        remarks: {
+            type: DataTypes.TEXT
         }
     })
 

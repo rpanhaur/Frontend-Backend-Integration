@@ -2,7 +2,7 @@ const { fetchStore, postStore, deleteStore, updateStore, singlePage } = require(
 
 const router = require('express').Router()
 
-router.route('/store').get(fetchStore).post(postStore)
-router.route('/store/:id').delete(deleteStore).patch(updateStore).get(singlePage)
+router.route('/program').get(fetchStore).post(postStore)
+router.route('/program/:id').delete(deleteStore).patch(updateStore).get(singlePage)
 
 module.exports = router

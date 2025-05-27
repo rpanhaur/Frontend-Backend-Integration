@@ -5,10 +5,13 @@ const app = express()
 require('./database/connection')
 const storeRouter = require('./routes/storeRouter')
 
+const cors = require('cors')
+
 
 app.use(express.json())
+app.use(cors())
 
-app.use('/', storeRouter)
+app.use('/api', storeRouter)
 
 
 

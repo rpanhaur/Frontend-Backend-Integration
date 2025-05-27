@@ -25,14 +25,15 @@ exports.fetchStore = async function (req, res) {
 exports.postStore = async function (req, res) {
 
     try {
-        const { storeName, storeOwner, storeAddress, storePhone } = req.body
+        const { sn, programDetails, inTime, outTime, duration, remarks } = req.body
 
         const result = await stores.create({
-            storeName,
-            storeOwner,
-            storeAddress,
-            storePhone
-
+            sn,
+            programDetails,
+            inTime,
+            outTime,
+            duration,
+            remarks
 
         })
 
@@ -89,9 +90,9 @@ exports.updateStore = async function (req, res) {
 
         const id = req.params.id
 
-        const { storeName, storeOwner, storeAddress, storePhone } = req.body
+        const { sn, programDetails, inTime, outTime, duration, remarks } = req.body
 
-        const result = await stores.update({ storeName, storeOwner, storeAddress, storePhone }, {
+        const result = await stores.update({ sn, programDetails, inTime, outTime, duration, remarks }, {
             where: {
                 id: id
             }
